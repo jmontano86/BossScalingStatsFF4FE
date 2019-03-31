@@ -1,0 +1,355 @@
+﻿<Window x:Class="BossScalingStatsFF4FE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BossScalingStatsFF4FE"
+        mc:Ignorable="d"
+        Title="FF4FE Boss Stats" Height="362.667" Width="562.667" Loaded="Window_Loaded">
+    <ScrollViewer>
+        
+    <Grid>
+        <ComboBox x:Name="bossComboBox" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="BossComboBox_SelectionChanged"/>
+        <ComboBox x:Name="slotComboBox" HorizontalAlignment="Left" Margin="310,68,0,0" VerticalAlignment="Top" Width="218" SelectionChanged="SlotComboBox_SelectionChanged"/>
+        <Label Content="Battle" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+            <Label Content="Position" HorizontalAlignment="Left" Margin="310,37,0,0" VerticalAlignment="Top"/>
+            <GroupBox x:Name="Enemy1GroupBox" Header="Boss Name" HorizontalAlignment="Left" Height="141" Margin="10,137,0,0" VerticalAlignment="Top" Width="518">
+            <Grid x:Name="statsGrid" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="508" Margin="0,0,-2,-33">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                    <ColumnDefinition Width="99*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                    <ColumnDefinition Width="99*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Level" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="HP" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="XP" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="GP" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="Atk Mult" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="Hit%" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+                <TextBlock x:Name="Level" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="HP" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="XP" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="GP" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="AtkMult" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="Hit" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+                
+                <TextBlock Text="Attack" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Def Mult" Grid.Row="1" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Evade%" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Defense" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Mag Def Mult" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Magic Evade%" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+
+                <TextBlock x:Name="Attack" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="DefMult" Grid.Row="1" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="Evade" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="Defense" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="MagDefMult" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="MagEvade" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+
+                <TextBlock Text="Magic Defense" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+                <TextBlock Text="Min Speed" Grid.Row="1" Grid.Column="4" FontSize="14"/>
+                <TextBlock Text="Max Speed" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+                <TextBlock Text="Spellpower" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+
+                <TextBlock x:Name="MagicDefense" Grid.Row="0" Grid.Column="5" FontSize="14"/>
+                <TextBlock x:Name="MinSpeed" Grid.Row="1" Grid.Column="5" FontSize="14"/>
+                <TextBlock x:Name="MaxSpeed" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+                <TextBlock x:Name="Spellpower" Grid.Row="3" Grid.Column="5" FontSize="14"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Enemy2GroupBox" Header="Boss Name" HorizontalAlignment="Left" Height="141" Margin="10,278,0,0" VerticalAlignment="Top" Width="518">
+            <Grid HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="508" Margin="0,0,-2,-33">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                    <ColumnDefinition Width="99*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                    <ColumnDefinition Width="99*"></ColumnDefinition>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Level" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="HP" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="XP" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="GP" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="Atk Mult" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                <TextBlock Text="Hit%" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+                <TextBlock x:Name="Level2" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="HP2" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="XP2" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="GP2" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="AtkMult2" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                <TextBlock x:Name="Hit2" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+
+                <TextBlock Text="Attack" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Def Mult" Grid.Row="1" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Evade%" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Defense" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Mag Def Mult" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+                <TextBlock Text="Magic Evade%" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+
+                <TextBlock x:Name="Attack2" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="DefMult2" Grid.Row="1" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="Evade2" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="Defense2" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="MagDefMult2" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+                <TextBlock x:Name="MagEvade2" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+
+                <TextBlock Text="Magic Defense" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+                <TextBlock Text="Min Speed" Grid.Row="1" Grid.Column="4" FontSize="14"/>
+                <TextBlock Text="Max Speed" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+                <TextBlock Text="Spellpower" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+
+                <TextBlock x:Name="MagicDefense2" Grid.Row="0" Grid.Column="5" FontSize="14"/>
+                <TextBlock x:Name="MinSpeed2" Grid.Row="1" Grid.Column="5" FontSize="14"/>
+                <TextBlock x:Name="MaxSpeed2" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+                <TextBlock x:Name="Spellpower2" Grid.Row="3" Grid.Column="5" FontSize="14"/>
+            </Grid>
+        </GroupBox>
+            <GroupBox x:Name="Enemy3GroupBox" Header="Boss Name" HorizontalAlignment="Left" Height="141" Margin="10,419,0,0" VerticalAlignment="Top" Width="518">
+                <Grid HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="508" Margin="0,0,-2,-33">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Level" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="HP" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="XP" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="GP" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Atk Mult" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Hit%" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+                    <TextBlock x:Name="Level3" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="HP3" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="XP3" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="GP3" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="AtkMult3" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="Hit3" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+
+                    <TextBlock Text="Attack" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Def Mult" Grid.Row="1" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Evade%" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Defense" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Mag Def Mult" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Magic Evade%" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+
+                    <TextBlock x:Name="Attack3" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="DefMult3" Grid.Row="1" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Evade3" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Defense3" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagDefMult3" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagEvade3" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+
+                    <TextBlock Text="Magic Defense" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Min Speed" Grid.Row="1" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Max Speed" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Spellpower" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+
+                    <TextBlock x:Name="MagicDefense3" Grid.Row="0" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MinSpeed3" Grid.Row="1" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MaxSpeed3" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="Spellpower3" Grid.Row="3" Grid.Column="5" FontSize="14"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox x:Name="Enemy4GroupBox" Header="Boss Name" HorizontalAlignment="Left" Height="141" Margin="10,560,0,0" VerticalAlignment="Top" Width="518">
+                <Grid HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="508" Margin="0,0,-2,-33">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Level" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="HP" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="XP" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="GP" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Atk Mult" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Hit%" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+                    <TextBlock x:Name="Level4" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="HP4" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="XP4" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="GP4" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="AtkMult4" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="Hit4" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+
+                    <TextBlock Text="Attack" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Def Mult" Grid.Row="1" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Evade%" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Defense" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Mag Def Mult" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Magic Evade%" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+
+                    <TextBlock x:Name="Attack4" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="DefMult4" Grid.Row="1" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Evade4" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Defense4" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagDefMult4" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagEvade4" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+
+                    <TextBlock Text="Magic Defense" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Min Speed" Grid.Row="1" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Max Speed" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Spellpower" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+
+                    <TextBlock x:Name="MagicDefense4" Grid.Row="0" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MinSpeed4" Grid.Row="1" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MaxSpeed4" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="Spellpower4" Grid.Row="3" Grid.Column="5" FontSize="14"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="Enemy5GroupBox" Header="Boss Name" HorizontalAlignment="Left" Height="141" Margin="10,701,0,0" VerticalAlignment="Top" Width="518">
+                <Grid HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="508" Margin="0,0,-2,-33">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Level" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="HP" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="XP" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="GP" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Atk Mult" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Hit%" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+                    <TextBlock x:Name="Level5" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="HP5" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="XP5" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="GP5" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="AtkMult5" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="Hit5" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+
+                    <TextBlock Text="Attack" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Def Mult" Grid.Row="1" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Evade%" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Defense" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Mag Def Mult" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Magic Evade%" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+
+                    <TextBlock x:Name="Attack5" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="DefMult5" Grid.Row="1" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Evade5" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Defense5" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagDefMult5" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagEvade5" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+
+                    <TextBlock Text="Magic Defense" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Min Speed" Grid.Row="1" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Max Speed" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Spellpower" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+
+                    <TextBlock x:Name="MagicDefense5" Grid.Row="0" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MinSpeed5" Grid.Row="1" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MaxSpeed5" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="Spellpower5" Grid.Row="3" Grid.Column="5" FontSize="14"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="Enemy6GroupBox" Header="Boss Name" HorizontalAlignment="Left" Height="141" Margin="10,842,0,0" VerticalAlignment="Top" Width="518">
+                <Grid HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="508" Margin="0,0,-2,-33">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Level" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="HP" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="XP" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="GP" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Atk Mult" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                    <TextBlock Text="Hit%" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+                    <TextBlock x:Name="Level6" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="HP6" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="XP6" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="GP6" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="AtkMult6" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                    <TextBlock x:Name="Hit6" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+
+                    <TextBlock Text="Attack" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Def Mult" Grid.Row="1" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Evade%" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Defense" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Mag Def Mult" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+                    <TextBlock Text="Magic Evade%" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+
+                    <TextBlock x:Name="Attack6" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="DefMult6" Grid.Row="1" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Evade6" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="Defense6" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagDefMult6" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+                    <TextBlock x:Name="MagEvade6" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+
+                    <TextBlock Text="Magic Defense" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Min Speed" Grid.Row="1" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Max Speed" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+                    <TextBlock Text="Spellpower" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+
+                    <TextBlock x:Name="MagicDefense6" Grid.Row="0" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MinSpeed6" Grid.Row="1" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="MaxSpeed6" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+                    <TextBlock x:Name="Spellpower6" Grid.Row="3" Grid.Column="5" FontSize="14"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
+</Window>
